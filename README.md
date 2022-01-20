@@ -4,6 +4,8 @@ This project is created to showcase web testing, especially the front-end of the
 
 # Running the program
 
+The infrastructure of the project consists of the main DVWA that we are going to perform the test upon. The rest of the infrastructure are mainly going to be set up to accomodate the testing.
+
 ## bringing up NIKTO
 
 ref: https://github.com/sullo/nikto/tree/master
