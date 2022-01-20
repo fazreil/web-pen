@@ -1,5 +1,7 @@
 # Introduction
 
+This project is created to showcase web testing, especially the front-end of the web. We are going to use NIKTO2 tool to scan a vulnerable website, DVWA (Damn Vulnerable Web Application).
+
 # Running the program
 
 ## bringing up NIKTO
@@ -10,6 +12,7 @@ Nikto has been added as git submodule.
 
 ```
 git submodule init
+git submodule update
 ```
 
 ## bringing up DVWA
