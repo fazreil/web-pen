@@ -10,11 +10,26 @@ The infrastructure of the project consists of the main DVWA that we are going to
 
 ref: https://github.com/sullo/nikto/tree/master
 
-Nikto has been added as git submodule.
+Nikto has been added as git submodule. Below are the two steps instructure to check out the submodule. You'll need to bring the submodule code before proceeding to build its docker image.
 
 ```
 git submodule init
 git submodule update
+```
+
+### Build nikto image
+
+Get into nikto directory to build nikto
+
+```
+cd nikto
+docker build . -t nikto
+```
+
+You can check the docker image built by listing all docker image
+
+```
+docker images
 ```
 
 ## bringing up DVWA
