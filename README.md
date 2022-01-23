@@ -24,11 +24,11 @@ git submodule update
 
 Git submodule is another git repository residing in the git repository. Although the practise is not recommended due to the design of git to be all inclusive, there are scenarios where including other repositories within cannot be avoided.
 
-#### Updating NIKTO source code 
+#### Updating NIKTO source code
 Updating NIKTO source code to get the latest from NIKTO's repository
 ```
 git submodule foreach "git fetch origin"
-git pull origin master
+git submodule foreach "git pull origin master"
 ```
 
 # Build nikto image
