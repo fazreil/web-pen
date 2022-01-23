@@ -24,11 +24,11 @@ git submodule update
 
 Git submodule is another git repository residing in the git repository. Although the practise is not recommended due to the design of git to be all inclusive, there are scenarios where including other repositories within cannot be avoided.
 
-#### Updating NIKTO source code 
+#### Updating NIKTO source code
 Updating NIKTO source code to get the latest from NIKTO's repository
 ```
 git submodule foreach "git fetch origin"
-git pull origin master
+git submodule foreach "git pull origin master"
 ```
 
 # Build nikto image
@@ -85,7 +85,7 @@ Docker compose leverages on docker container technology. In previous chapters we
 ref: https://docs.docker.com/compose/
 
 ### Composition of services in docker compose.
-In our setup we are going to reproduce the same infrastructure like in previous chapters. There will be two services, DVWA and Nikto2. Services in docker compose are applications available in the said composition. 
+In our setup we are going to reproduce the same infrastructure like in previous chapters. There will be two services, DVWA and Nikto2. Services in docker compose are applications available in the said composition.
 
 #### using images and build
 We are going to use the same method for bringing up DVWA (by fetching latest image from dockerhub) and also Nikto2 (by builing the image before running it as a container).
@@ -95,7 +95,3 @@ We need to keep in mind that DVWA would require volume to be attached to store i
 
 #### network
 Both Nikto2 and DVWA services are going to be run in a dedicated network. We will name the network as `web-pen` network
-
-
-
-
