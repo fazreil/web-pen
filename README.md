@@ -70,3 +70,32 @@ To save the report in a specific format, mount /tmp as a volume:
 ```
 docker run --rm -v $(pwd):/tmp sullo/nikto -h http://dvwa -o /tmp/out.json
 ```
+
+---
+
+# Turning the infrastructure into IAC.
+The idea of having the above infrastructure is that they can be provisioned easily by having to execute a piece of code. This practise is called as IAC (Infrastructure as Code). Wittig in his word, "Infrastructure as code (IaC) is the process of managing and provisioning computer data centers through machine-readable definition files, rather than physical hardware configuration or interactive configuration tools.". In IAC, almost everything is built from scratch by using codes. Provisioning tools that is usually being used are usually the kind of tools that leverage on virtualization and their underlying services. Tools such as vagrant, kubernetes (k8s) and docker are popular choices of IAAC tools. Provisioning tools like ansible are popular in provisioning machines across the infrastructure.
+
+ref: Wittig, A., & Wittig, M. (2015). Amazon Web Services in Action (1st ed.). Manning Publications.
+
+
+## Docker compose.
+Docker compose leverages on docker container technology. In previous chapters we have brought up multiple services, DVWA and Nikto2 as containers. In order to make that happen, we previously require to run a few commands separately for each of the services. With docker-compose, we could bring the whole infrastructure just by `docker-compose up`. We could also destroy the whole infrastructure just by `docker-compose down`. These kind of flexibility was made by design. The flexibility allow us to bring the whole infrastructure up just to perform required task and bring them down when it is done.
+
+ref: https://docs.docker.com/compose/
+
+### Composition of services in docker compose.
+In our setup we are going to reproduce the same infrastructure like in previous chapters. There will be two services, DVWA and Nikto2. Services in docker compose are applications available in the said composition. 
+
+#### using images and build
+We are going to use the same method for bringing up DVWA (by fetching latest image from dockerhub) and also Nikto2 (by builing the image before running it as a container).
+
+#### volume
+We need to keep in mind that DVWA would require volume to be attached to store its setting. Volume is like a drive attached to the container. This will require us to define a docker volume to be used with DVWA. The use of docker volume for DVWA will eliminate the need to initialize DVWA over and over again during provisioning.
+
+#### network
+Both Nikto2 and DVWA services are going to be run in a dedicated network. We will name the network as `web-pen` network
+
+
+
+
