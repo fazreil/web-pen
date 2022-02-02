@@ -1,0 +1,22 @@
+version: "3.9"
+services:
+  #dvwa
+  dvwa:
+    image: sagikazarmark/dvwa
+    ports:
+      - "8080:80"
+  #nikto
+  nikto:
+    build: nikto
+    command: "-h http://dvwa"
+    deploy:
+      restart_policy:
+        delay: 5s
+        max_attempts: 3
+    depends_on:
+      - dvwa
+    links:
+      - dvwa
+volumes:
+  dvwa_home:
+  gogs_data:
