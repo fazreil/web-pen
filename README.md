@@ -301,8 +301,41 @@ In our setup we are going to reproduce the same infrastructure like in previous 
 #### using images and build
 We are going to use the same method for bringing up DVWA (by fetching latest image from dockerhub) and also Nikto2 (by builing the image before running it as a container).
 
+To view available images in local docker repository, run the following command: `docker images`
+
+Sample output when running said command can be seen below:
+```
+$ docker images                                                                                                                                  ✔  6s 
+REPOSITORY                                      TAG                    IMAGE ID       CREATED         SIZE
+sullo/nikto                                     latest                 936ff09d4fd6   9 days ago      45.4MB
+dvja_app                                        latest                 616e3361a56b   6 weeks ago     927MB
+mysql                                           5.6                    0befd40a091b   2 months ago    303MB
+```
+
 #### volume
 We need to keep in mind that DVWA would require volume to be attached to store its setting. Volume is like a drive attached to the container. This will require us to define a docker volume to be used with DVWA. The use of docker volume for DVWA will eliminate the need to initialize DVWA over and over again during provisioning.
 
+We can see if there are available docker volumes that we had created by running `docker volume ls`
+
+Sample output when running `docker volume ls` is as below:
+```
+$ docker volume ls                                                                                                                                      ✔
+DRIVER    VOLUME NAME
+local     0ec8a6aa3d6c5edec1598b54e24dc1942c866dc93d9934b637525bd287e275e4
+local     1ad1e829810ee613508bea0dd923c6c9463a414d0b5a136eeb5fb01e85f6e853
+local     1d64978fc4d2efbfce8391ffd02aff856dc04dc5259a069ad568cb58248ba018
+```
+
 #### network
 Both Nikto2 and DVWA services are going to be run in a dedicated network. We will name the network as `web-pen` network
+
+Similarly, we can see available network in the local docker systems by running: `docker network ls`
+
+Sample output when running `docker network ls` is as below:
+```
+$ docker network ls                                                                                                                                  ✔ 
+NETWORK ID     NAME                          DRIVER    SCOPE
+fac9b3baea10   bridge                        bridge    local
+70223f4bdb2b   devops-infra_default          bridge    local
+d1da3833d288   docker-elk_elk                bridge    local
+```
