@@ -1,0 +1,21 @@
+version: "3.9"
+services:
+  #dvwa
+  dvwa:
+    image: sagikazarmark/dvwa
+    ports:
+      - "8080:80"
+    networks:
+      - web-pen
+  #nikto
+  nikto:
+    build: nikto
+    command: "-h http://dvwa"
+    depends_on:
+      - dvwa
+    links:
+      - dvwa
+    networks:
+      - web-pen
+networks:
+  web-pen:
