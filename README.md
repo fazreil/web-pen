@@ -541,3 +541,26 @@ You may stop the entire docker by pressing `ctrl+c` or in a more gracely manner,
 ```sh
 $ docker-compose down
 ```
+
+# Implementing DevSecOps as part of the DevOps pipeline.
+
+The idea of DevSecOps is to perform testing as part of software delivery pipeline. Software gets developed every day,  in DevOps philosophy, you should ensure the integrity of the build up front while in the build phase. Doing so will avoid surprises at the later stage of development. We rather fail early than need to rework, we would reduce/eliminate wasteful effort in the beginning of the software development phase. 
+
+## CICD
+
+DevSecOps relies heavily on an automated process. Build and deployment effort are no longer manned mechanics. DevSecOps is a culture that taps on automated delivery pipeline.
+
+To achieve this, we are going to tap on Conrtinuous Integration and Continuous Delivery (CICD) effort. In CICD, newly committed codes are built and deployed to testing environment, representing some progress of the development. Regardless if the built is half-cooked of ready for test, the application we interested in can be observed for any flaw in term of functionality, performance or in our interest, security.
+
+## Delivery pipeline
+
+Delivery pipeline defines the process of compiling the code, perform some checks and then deploy the built application.
+
+Delivery pipeline begins with fetching the source code. Source codes usually reside in source code repository like subversion, cvs, ClearCase or Git. The location of the codes are defined as path or branch of the code. Different software development team usually define their own branching strategy.
+
+With the right source code, the delivery pipeline prepares the right tools and prerequisite for the build. This includes having the build tools and the correct libraries to build the application. Popular build tools are yarn, ant, gradle and maven. Modern build tools will retrieve necessary libraries over from the library repositories. Some build mechanism don't require specific tools, compressing the script into zipfile will be good enough to distribute the application as deployables.
+
+Deploying applications usually involve getting the built application (now known as artifact) to the intended environment. The environment could be some server or they could be packaged as libraries and deployed into repositories. Deploying applications in modern days would be done with the help of provisioning tools like ansible, chef, puppet, terraform, docker swarm or kubernetes.
+
+These processes are the basic building blocks of the delivery pipeline. Good DevOps practise will enhance the delivery pipeline with more processes with expert help from DevTestOps, DevDataOps, SysOps and DevSecOps.
+
