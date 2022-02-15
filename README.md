@@ -422,6 +422,8 @@ The next line says that the nikto service `depends_on: -dvwa`, telling docker to
 
 The other line says `links: -dvwa` which tells docker that this services have a direct connection to dvwa service, enabling us to call dvwa by service name. This is useful in the `command` section above.
 
+TODO: draw a picture of network diagram defined by web-pen network.
+
 ### Running docker-compose
 
 Running docker-compose script is simple, you can do that with the follwing command:
