@@ -201,6 +201,8 @@ docker images
 
 ref: https://hub.docker.com/r/sagikazarmark/dvwa
 
+TODO: put a picture of DVWA docker hub page here
+
 ```
 $ docker pull sagikazarmark/dvwa
 ```
