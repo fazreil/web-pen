@@ -243,7 +243,7 @@ login to dvwa with the following username and password:
 
 Click on the create database to setup the mysql database built within. Next, try to login to the page with `admin:password` username password pair
 
-TODO: put a picture of DVWA web page here.
+![dvwa webpage](img/dvwawebpage.png)
 
 # Testing the DVWA with Nikto
 Run the following command to run NIKTO while targetting DVWA. Make sure the ip specified is correct:
