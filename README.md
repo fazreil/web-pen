@@ -570,3 +570,11 @@ Deploying applications usually involve getting the built application (now known 
 
 These processes are the basic building blocks of the delivery pipeline. Good DevOps practise will enhance the delivery pipeline with more processes with expert help from DevTestOps, DevDataOps, SysOps and DevSecOps.
 
+When we discuss about Delivery Pipeline, we tend to mention some of the popular tools that the industry equip themselves while building their delivery pipeline. Names like Jenkins CI, Travis Cl. Github workflow, Bitbucket pipeline are some of the popular tools in mind when constructing delivery pipeline.
+
+## Implementing CICD with Jenkins
+In our implementation, we are going to fit Jenkins-CI into the picture. The choice using Jenkins-CI came into picture because at one time Jenkins-CI was de facto choice when comes to building delivery pipeline.
+ 
+Jenkins-CI orchestrates the activities in delivery pipeline from checking out the right source codes up until the deployment of the built application. A rich implementation of delivery stages happen in between them. Build process seldom include checks that improves the integrity of the application. This is where DevSecOps play their role. The DevSecOps will try to probe the application during the delivery.
+
+ In our implementation of Jenkins CI, we are going to leverage on the existing docker compose.
