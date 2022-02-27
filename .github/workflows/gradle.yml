@@ -25,7 +25,6 @@ jobs:
     - name: Gradle Build Action
       uses: gradle/gradle-build-action@v2.0-beta.1
       with:
-        build-root-directory: ./presentation
         arguments: 'npmInstall start'
     - name: Archive Action
       uses: ihiroky/archive-action@v1
