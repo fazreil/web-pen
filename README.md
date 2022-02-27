@@ -546,7 +546,7 @@ $ docker-compose down
 
 # Implementing DevSecOps as part of the DevOps pipeline.
 
-The idea of DevSecOps is to perform testing as part of software delivery pipeline. Software gets developed every day,  in DevOps philosophy, you should ensure the integrity of the build up front while in the build phase. Doing so will avoid surprises at the later stage of development. We rather fail early than need to rework, we would reduce/eliminate wasteful effort in the beginning of the software development phase. 
+The idea of DevSecOps is to perform testing as part of software delivery pipeline. Software gets developed every day,  in DevOps philosophy, you should ensure the integrity of the build up front while in the build phase. Doing so will avoid surprises at the later stage of development. We rather fail early than need to rework, we would reduce/eliminate wasteful effort in the beginning of the software development phase.
 
 ---
 
@@ -564,7 +564,7 @@ Delivery pipeline defines the process of compiling the code, perform some checks
 
 Delivery pipeline begins with fetching the source code. Source codes usually reside in source code repository like subversion, cvs, ClearCase or Git. The location of the codes are defined as path or branch of the code. Different software development team usually define their own branching strategy.
 
-With the right source code, the delivery pipeline prepares the right tools and prerequisite for the build. This includes having the build tools and the correct libraries to build the application. Popular build tools are yarn, ant, gradle and maven. Modern build tools will retrieve necessary libraries over from the library repositories. Some build mechanism don't require specific tools, compressing the script into zipfile will be good enough to distribute the application as deployables.
+With the right source code, the delivery pipeline prepares the right tools and prerequisite for the build. This includes having the build tools and the correct libraries to build the application. Popular build tools are yarn, ant, gradle and maven. Modern build tools will retrieve necessary libraries over from the library repositories. Some build mechanism do not require specific tools, compressing the script into zipfile will be good enough to distribute the application as deployables.
 
 Deploying applications usually involve getting the built application (now known as artifact) to the intended environment. The environment could be some server or they could be packaged as libraries and deployed into repositories. Deploying applications in modern days would be done with the help of provisioning tools like ansible, chef, puppet, terraform, docker swarm or kubernetes.
 
@@ -574,7 +574,7 @@ When we discuss about Delivery Pipeline, we tend to mention some of the popular 
 
 ## Implementing CICD with Jenkins
 In our implementation, we are going to fit Jenkins-CI into the picture. The choice using Jenkins-CI came into picture because at one time Jenkins-CI was de facto choice when comes to building delivery pipeline.
- 
+
 Jenkins-CI orchestrates the activities in delivery pipeline from checking out the right source codes up until the deployment of the built application. A rich implementation of delivery stages happen in between them. Build process seldom include checks that improves the integrity of the application. This is where DevSecOps play their role. The DevSecOps will try to probe the application during the delivery.
 
  In our implementation of Jenkins CI, we are going to leverage on the existing docker compose.
