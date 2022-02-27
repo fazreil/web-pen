@@ -1,0 +1,16 @@
+{
+  "name": "InternshipPresentation",
+  "version": "1.0.0",
+  "description": "Internship Presentation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cleaver final.md",
+    "watch": "cleaver watch final.md"
+  },
+  "author": "Nor Munira Syafiqa binti Md Zaini",
+  "license": "ISC",
+  "dependencies": {
+    "cleaver": "^0.8.7"
+  }
+}

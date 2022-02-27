@@ -1,0 +1,30 @@
+#slide-2 {
+  background: url('img/peakyblinders.png');
+  background-size: cover;
+  color: #eee;
+  -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+}
+
+#slide-4 {
+  background: url('img/books.jpg');
+  background-size: cover;
+  color: #eee;
+  -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+}
+
+#slide-9 {
+  background: url('img/incubationlab.jpg');
+  background-size: cover;
+  color: #eee;
+  -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+}
+
+background {
+  background-color: #000
+}
+
+h1 {
+  color: #eee;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
